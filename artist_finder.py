@@ -53,12 +53,12 @@ while (time.time() - start_time < time_limit) and len(artist_queue) > 0:
     db.artists.insert(artist)
     tally = tally + 1
     print str(tally) + " " + artist['name']
+    if (tally%20 == 0):
+      print str(int(time_limit - (time.time() - start_time))) + " seconds remaining, " + str(len(artist_queue)) + " artists currently queued."
     for related in related_artists:
       if related not in artist_queue: # really cuts down the number of artists in the list, but it will probably slow the thing down a bit/lot
         artist_queue.append(related) # I really hope I don't blow out the list....
 
-  if (tally%20 == 0):
-    print str(int(time_limit - (time.time() - start_time))) + " seconds remaining, " + str(len(artist_queue)) + " artists currently queued."
 if len(artist_queue) == 0:
   print "Queue is empty! Number of artists inserted is: " + str(tally) + "."
 else:
