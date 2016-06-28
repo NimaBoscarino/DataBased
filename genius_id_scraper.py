@@ -10,9 +10,11 @@ db = client.databased
 GENIUS_URL = "http://www.genius.com/artists/"
 
 artists = db.artists.find()
+total = db.artists.count()
+count = 0
 
 for artist in artists:
-  print artist['name']
+  count = count + 1
   artist_name = artist['name'].replace('.', '')
   artist_genius_response = requests.get(GENIUS_URL + artist_name)
   tree = html.fromstring(artist_genius_response.content)
@@ -24,4 +26,4 @@ for artist in artists:
     {"id": artist['id']},
       {"$set": {"genius_id": int(genius_id)}}
     )
-  print genius_id
+  print str(count) + "/" + str(total) + "\t" + str(genius_id) + "\t" + artist['name']
