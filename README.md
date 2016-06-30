@@ -9,5 +9,7 @@ These are scripts to scrape your own hip-hop dataset, to be used for machine lea
 
 - song_scraper_genius.py
   - Run this script to create a collection "songs". This will not have lyrics, lastfm tags, or spotify audio features.
+  - Run with 2 arguments: the index of the first artist in the collection you want to start with, and the (index + 1) of the last artist you want in the interval
+  - e.g. `python song_scraper_genius.py 0 300` followed by `python song_scraper_genius 300 600` etc... until you are done or satisfied.
 
-Instead of running the scripts yourself, feel free to use the .json files to populate your database. To generate artists.json I ran artist_finder.py for 30 minutes, using the seed "Kanye", followed by running genius_id_scraper.py.
+Instead of running the scripts yourself, feel free to use the .json files to populate your database. To generate artists.json I ran artist_finder.py for 30 minutes, using the seed "Kanye", followed by running genius_id_scraper.py. To generate songs.json I ran song_scraper_genius.py from 0 to 16901.
