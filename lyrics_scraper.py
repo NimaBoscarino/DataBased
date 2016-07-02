@@ -14,7 +14,7 @@ total = end - start
 count = 0
 
 for song in songs:
-  if db.lyrics.count({"genius_id":song['genius_id']:
+  if db.lyrics.count({"genius_id":song['genius_id']}) == 0:
     lyrics = {}
     lyrics['title'] = song['title']
     lyrics['genius_id'] = song['genius_id']
