@@ -1,6 +1,6 @@
 DataBased - A Hip-Hop Data Set
 ==============================
-These are scripts to scrape your own hip-hop dataset, to be used for machine learning, statistics, or reference. Soon I will post .json files, so you will not have to build the dataset yourself. To build the dataset in MongoDB, execute the scripts in this order:
+These are scripts to scrape your own hip-hop dataset, to be used for machine learning, statistics, or reference. If you do not want to build the set yourself, the exported collections can be found in JSON format in the `Raw_JSON` archive. To build the dataset in MongoDB, execute the scripts in this order:
 - artist_finder.py
   - Run this script with 2 arguments: The seed artist, and the time limit in seconds.
   - e.g. `python artist_finder.py Kanye 100`
@@ -19,4 +19,13 @@ These are scripts to scrape your own hip-hop dataset, to be used for machine lea
   - I am running this with 100 processes on my MacBook Pro, and all 4 cores are maxed out at the moment.
   - NOTE: You might find that some of the processes just end up hanging (or db.lyrics.count() doesn't equal db.songs.count()), but I don't think that's a huge problem. Just run the script again, and it should sort itself out. It avoids inserting duplicates, so you shouldn't end up with any problems if you run this multiple times.
 
-Instead of running the scripts yourself, feel free to use the .json files to populate your database. To generate artists.json I ran artist_finder.py for 30 minutes, using the seed "Kanye", followed by running genius_id_scraper.py. To generate songs.json I ran song_scraper_genius.py from 0 to 16901.
+Instead of running the scripts yourself, feel free to use the `.json` files in the `Raw_JSON` archive to populate your database. To generate `artists.json` I ran `artist_finder.py` for 30 minutes, using the seed `"Kanye"`, followed by running `genius_id_scraper.py`. To generate `songs.json` I ran `song_scraper_genius.py` from 0 to 16901.
+
+##TO-DO:
+  - Scrape artist tags from lastFM
+  - Scrape audio-features for songs from spotify
+  - Run my own analytics, including:
+    - swearing metrics for songs/artists
+    - unique word counts for artists for set lyric set size
+    - references to places
+    - etc...
