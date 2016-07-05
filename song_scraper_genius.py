@@ -18,10 +18,8 @@ total = end - start
 count = 0
 
 for artist in artists:
-  print "hi"
   count = count + 1
-  print "\n" + str(count) + "/" + str(total) + " "  + artist['name']
-  print "Songs:"
+  print str(count) + "/" + str(total) + " "  + artist['name']
   top_songs = requests.get( genius_url_1 + str(artist['genius_id']) + genius_url_2,
       params={"access_token":GENIUS_TOKEN}
       ).json()['response']['songs']
@@ -40,12 +38,11 @@ for artist in artists:
       #tags = tree.xpath('//lfm/toptags/tag[count > 3]/name/text()')
       #song['tags'] = tags
       #artists
-      url_song_title = song['title'].replace("%", "%25")
-      spotify_url_1 = 'https://api.spotify.com/v1/search?type=track&q=' + primary_artist + ' ' + url_song_title
-      song_info_response = requests.get(spotify_url_1)
-      song_info_request = song_info_response.json()
-      if len(song_info_request['tracks']['items']) != 0:
-        song['artists'] = song_info_request['tracks']['items'][0]['artists']
-        db.songs.insert(song)
-        print song['title'] + " ",
-
+      #url_song_title = song['title'].replace("%", "%25")
+      #spotify_url_1 = 'https://api.spotify.com/v1/search?type=track&q=' + primary_artist + ' ' + url_song_title
+      #song_info_response = requests.get(spotify_url_1)
+      #song_info_request = song_info_response.json()
+      song['genius_artist'] = primary_artist
+      #if len(song_info_request['tracks']['items']) != 0:
+      #  song['artists'] = song_info_request['tracks']['items'][0]['artists']
+      db.songs.insert(song)

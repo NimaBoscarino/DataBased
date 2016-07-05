@@ -4,6 +4,7 @@ These are scripts to scrape your own hip-hop dataset, to be used for machine lea
 - artist_finder.py
   - Run this script with 2 arguments: The seed artist, and the time limit in seconds.
   - e.g. `python artist_finder.py Kanye 100`
+
 - batch_genius_id_scraper.py
   - Simply run this script with 2 arguments (the size of your collection and the number of processes you desire), and wait until it has completed. It might take a while, since it has to keep downloading full HTML pages (I think that slows it down). The Genius API doesn't really have a great way for getting artist IDs, because if you search for an artist name it only returns a list of songs, and the artist you're searching for might not actually be listed as the primary artist for the first song in the list and then you run into all kinds of problems. When the script has run its course, you now have all the genius IDs for the artists! (I hope)
 
