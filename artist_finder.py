@@ -46,10 +46,11 @@ while (time.time() - start_time < time_limit) and len(artist_queue) > 0:
     if pattern.match(tag['name']):
         hiphop_count = hiphop_count + tag['count']
 
-  if hiphop_count > 9  and db.artists.count({"name": artist['name']}) == 0 and artist['followers']['total'] > 2500: #tune to your liking
+  if hiphop_count > 9  and db.artists.count({"name": artist['name']}) == 0 and artist['followers']['total'] > 3000: #tune to your liking
     related_artists_response = requests.get( related_url_1 + artist['id'] + related_url_2 )
     related_artists = related_artists_response.json()['artists']
     artist['related_artists'] = related_artists # might be neat for graphing closeness of artists...
+    artist['tags'] = tags # can't believe I forgot to put this in the first time...
     db.artists.insert(artist)
     tally = tally + 1
     print str(tally) + " " + artist['name']

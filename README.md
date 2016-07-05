@@ -22,6 +22,7 @@ These are scripts to scrape your own hip-hop dataset, to be used for machine lea
 Instead of running the scripts yourself, feel free to use the `.json` files in the `Raw_JSON` archive to populate your database. To generate `artists.json` I ran `artist_finder.py` for 30 minutes, using the seed `"Kanye"`, followed by running `genius_id_scraper.py`. To generate `songs.json` I ran `song_scraper_genius.py` from 0 to 16901.
 
 ##TO-DO:
+  - Document schema in README
   - Scrape artists for songs from spotify
   - Scrape artist tags from lastFM
   - Scrape audio-features for songs from spotify
