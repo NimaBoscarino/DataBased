@@ -34,11 +34,11 @@ for artist in artists:
       song['lyrics_url'] = raw_song['url']
       #tags
       primary_artist = raw_song['primary_artist']['name']
-      tag_request_url = 'http://ws.audioscrobbler.com/2.0/?method=track.gettoptags&autocorrect=1&track=' + song['title'] + '&artist=' + primary_artist + '&api_key=' + LASTFM_TOKEN
-      song_tag_request = requests.get(tag_request_url)
-      tree = html.fromstring(song_tag_request.content)
-      tags = tree.xpath('//lfm/toptags/tag[count > 3]/name/text()')
-      song['tags'] = tags
+      #tag_request_url = 'http://ws.audioscrobbler.com/2.0/?method=track.gettoptags&autocorrect=1&track=' + song['title'] + '&artist=' + primary_artist + '&api_key=' + LASTFM_TOKEN
+      #song_tag_request = requests.get(tag_request_url)
+      #tree = html.fromstring(song_tag_request.content)
+      #tags = tree.xpath('//lfm/toptags/tag[count > 3]/name/text()')
+      #song['tags'] = tags
       #artists
       url_song_title = song['title'].replace("%", "%25")
       spotify_url_1 = 'https://api.spotify.com/v1/search?type=track&q=' + primary_artist + ' ' + url_song_title
