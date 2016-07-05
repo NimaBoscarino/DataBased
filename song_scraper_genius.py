@@ -18,6 +18,7 @@ total = end - start
 count = 0
 
 for artist in artists:
+  print "hi"
   count = count + 1
   print "\n" + str(count) + "/" + str(total) + " "  + artist['name']
   print "Songs:"

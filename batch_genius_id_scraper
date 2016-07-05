@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+# input: size of data set (from db.songs.count()) and number of processes desired (not exact)
+
+stepsize=$(( $1 / $2 ))
+count=0
+
+while (( count < $1 )) {
+  python genius_id_scraper.py $count $(( count + stepsize )) &;
+  count=$(( count + stepsize ));
+}

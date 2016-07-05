@@ -9,8 +9,11 @@ db = client.databased
 
 GENIUS_URL = "http://www.genius.com/artists/"
 
-artists = db.artists.find()
-total = db.artists.count()
+start = int(sys.argv[1])
+end = int(sys.argv[2])
+
+artists = db.artists.find()[start:end]
+total = end - start
 count = 0
 
 for artist in artists:
