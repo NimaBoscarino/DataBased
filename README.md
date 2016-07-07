@@ -22,7 +22,7 @@ These are scripts to scrape your own hip-hop dataset, to be used for machine lea
   - title of song
 
 # Goodies
-
+![Drake](/Goodies/drake.png)
 
 #TO-DO:
   - Document schema in README
