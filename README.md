@@ -1,6 +1,8 @@
 DataBased - A Hip-Hop Data Set
 ==============================
-DataBased is a set of scripts that will scrape a hip-hop dataset to be used at your discretion. If you do not want to build your own set, exported collections can be found in JSON format in the `Raw_JSON` archive. To build the set in MongoDB, see INSTRUCTIONS.md.
+DataBased is a set of scripts that will scrape a hip-hop dataset to be used at your discretion. 
+If you do not want to build your own set, exported collections can be found in JSON format in the `Raw_JSON` archive. 
+To build the set in MongoDB, see INSTRUCTIONS.md.
 
 #Schema
 - Artists
